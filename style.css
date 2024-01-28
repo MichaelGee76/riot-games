@@ -29,10 +29,12 @@ a {
 /* ? ###################### Clamp ##################### */
 
 h1 {
-    font-size: clamp(3rem, 4vw, 5rem);
+    font-size: clamp(4.5rem, 5vw, 7rem);
+    color: white;
 }
 h2 {
-    font-size: clamp(3rem, 4vw, 4.8rem);
+    font-size: clamp(2.5rem, 3vw, 3.5rem);
+    color: white;
 }
 h3 {
     font-size: clamp(2.5rem, 3.3vw, 4rem);
@@ -49,10 +51,17 @@ h6 {
 p,
 label {
     font-size: clamp(2rem, 2vw, 2rem);
+    color: white;
 }
 a,
 li {
     font-size: clamp(2rem, 2vw, 2rem);
+    opacity: 0.85;
+}
+
+a:hover {
+    opacity: 1;
+    filter: brightness(1);
 }
 
 /* ? ################## Wrapper #################### */
@@ -157,6 +166,16 @@ span {
     font-weight: 700;
     margin-bottom: 2rem;
     position: relative;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #ff4655;
+}
+
+.leftContainer a:hover {
+    opacity: 1;
+    text-decoration: underline 5px;
+    text-underline-offset: 10px;
+    -webkit-text-stroke-width: 0.3px;
+    -webkit-text-stroke-color: #ffffff;
 }
 
 .active span,
@@ -172,7 +191,7 @@ span {
     align-items: center;
     justify-content: center;
     /* visibility: hidden; */
-    animation: visible 3s 3s ease-out;
+    animation: visible 2s ease-out;
 }
 
 .middleContainer img {
@@ -182,16 +201,62 @@ span {
 
 @keyframes visible {
     from {
-        visibility: hidden;
-        opacity: 0.5;
+        margin-top: -100%;
     }
 
     to {
-        visibility: visible;
-        opacity: 1;
+        margin-top: 0;
     }
 }
 
 .middleContainer {
     /* visibility: visible; */
+}
+
+/* !###################### End Animation ########################## */
+
+/* ! #################### Right  Container include Animation */
+
+.rightContainer {
+    max-width: 33%;
+    padding-top: 15%;
+    animation: slide-opacity 3s ease-out;
+}
+
+@keyframes slide-opactity {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* ! ################################### End Animation ##################### */
+.rightContainer p {
+    max-width: 50%;
+    font-weight: 500;
+    -webkit-text-stroke-width: 0.3px;
+    -webkit-text-stroke-color: #ff4655;
+}
+
+.rightContainer hr {
+    max-width: 50%;
+    margin-bottom: 5rem;
+}
+
+.headingContainer img {
+    margin-bottom: 3rem;
+}
+
+.rightContainer h1,
+.rightContainer h2,
+.rightContainer p {
+    margin-bottom: 2rem;
+}
+
+.cube {
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: #fff;
 }
