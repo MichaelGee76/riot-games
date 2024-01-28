@@ -39,15 +39,7 @@ h2 {
 h3 {
     font-size: clamp(2.5rem, 3.3vw, 4rem);
 }
-h4 {
-    font-size: clamp(2.8rem, 3.2vw, 3.8rem);
-}
-h5 {
-    font-size: clamp(2.5rem, 3vw, 3.2rem);
-}
-h6 {
-    font-size: clamp(1.6rem, 2.5vw, 1.8rem);
-}
+
 p,
 label {
     font-size: clamp(2rem, 2vw, 2rem);
@@ -137,7 +129,7 @@ section {
     padding-left: 3vw;
     min-width: 33%;
     min-height: 100vh;
-    animation: slide-to-right 2s ease-out 1;
+    animation: slide-to-right 2s ease-out;
 }
 
 @keyframes slide-to-right {
@@ -191,7 +183,7 @@ span {
     align-items: center;
     justify-content: center;
     /* visibility: hidden; */
-    animation: visible 2s ease-out;
+    animation: grow 2s ease-out;
 }
 
 .middleContainer img {
@@ -199,18 +191,14 @@ span {
     height: 70%;
 }
 
-@keyframes visible {
+@keyframes grow {
     from {
-        margin-top: -100%;
+        transform: scale(0);
     }
 
     to {
-        margin-top: 0;
+        transform: scale(1);
     }
-}
-
-.middleContainer {
-    /* visibility: visible; */
 }
 
 /* !###################### End Animation ########################## */
@@ -220,10 +208,12 @@ span {
 .rightContainer {
     max-width: 33%;
     padding-top: 15%;
-    animation: slide-opacity 3s ease-out;
+    animation-name: opacity;
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
 }
 
-@keyframes slide-opactity {
+@keyframes opacity {
     from {
         opacity: 0;
     }
@@ -259,4 +249,62 @@ span {
     width: 1.5rem;
     height: 1.5rem;
     background-color: #fff;
+}
+
+/* ? ######################## Media Queries #################### */
+
+@media only screen and (max-width: 1330px) {
+    nav {
+        animation: none;
+        flex-direction: column;
+        position: static;
+        gap: 2rem;
+    }
+
+    .links {
+        font-size: 75%;
+    }
+
+    .leftContainer {
+        position: static;
+    }
+}
+
+@media only screen and (max-width: 968px) {
+    section {
+        flex-direction: column;
+        align-items: center;
+    }
+    .rightContainer {
+        background: #ff4655;
+        padding: 5% 20%;
+        max-width: 90vw;
+        margin-bottom: 4vw;
+    }
+
+    .text p {
+        max-width: 75%;
+    }
+
+    hr {
+        max-width: 10%;
+    }
+
+    .middleContainer {
+        margin-bottom: 4vw;
+        max-width: 75%;
+    }
+}
+
+@media only screen and (max-width: 520px) {
+    .leftContainer,
+    .middleContainer,
+    .rightContainer {
+        margin-bottom: 2vw;
+        animation: none;
+    }
+
+    .middleContainer {
+        height: 100%;
+    }
 }
