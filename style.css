@@ -76,7 +76,7 @@ nav {
     background-color: black;
     position: absolute;
     min-width: 100vw;
-    animation: slide-down 1s ease-out 0s 1;
+    animation: slide-down 2s ease-out 0s 1;
 }
 
 @keyframes slide-down {
@@ -118,6 +118,8 @@ section {
     display: flex;
 }
 
+/* ! ################### Left Container include Animation ################## */
+
 .leftContainer {
     display: flex;
     flex-direction: column;
@@ -126,6 +128,17 @@ section {
     padding-left: 3vw;
     min-width: 33%;
     min-height: 100vh;
+    animation: slide-to-right 2s ease-out 1;
+}
+
+@keyframes slide-to-right {
+    from {
+        margin-left: -50%;
+    }
+
+    to {
+        margin-left: 0;
+    }
 }
 
 span {
@@ -149,4 +162,36 @@ span {
 .active span,
 .leftContainer .active {
     color: #ff4655;
+}
+
+/* ! ############## Middle Container include Animation ################### */
+
+.middleContainer {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* visibility: hidden; */
+    animation: visible 3s 3s ease-out;
+}
+
+.middleContainer img {
+    /* visibility: hidden; */
+    height: 70%;
+}
+
+@keyframes visible {
+    from {
+        visibility: hidden;
+        opacity: 0.5;
+    }
+
+    to {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+.middleContainer {
+    /* visibility: visible; */
 }
