@@ -142,6 +142,8 @@ section {
     }
 }
 
+/* ! ########################## End of Animation ################# */
+
 span {
     color: white;
     position: absolute;
@@ -201,7 +203,7 @@ span {
     }
 }
 
-/* !###################### End Animation ########################## */
+/* !###################### End of Animation ########################## */
 
 /* ! #################### Right  Container include Animation */
 
@@ -222,7 +224,7 @@ span {
     }
 }
 
-/* ! ################################### End Animation ##################### */
+/* ! ################################### End of Animation ##################### */
 .rightContainer p {
     max-width: 50%;
     font-weight: 500;
@@ -231,8 +233,15 @@ span {
 }
 
 .rightContainer hr {
-    max-width: 50%;
+    max-width: 60%;
     margin-bottom: 5rem;
+}
+
+.headingContainer {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
 }
 
 .headingContainer img {
@@ -268,6 +277,11 @@ span {
     .leftContainer {
         position: static;
     }
+
+    .rightContainer h2,
+    .rightContainer h1 {
+        margin-bottom: 1rem;
+    }
 }
 
 @media only screen and (max-width: 968px) {
@@ -302,6 +316,10 @@ span {
     .rightContainer {
         margin-bottom: 2vw;
         animation: none;
+    }
+
+    .leftContainer a {
+        font-size: clamp(3rem, 4vw, 5rem);
     }
 
     .middleContainer {
