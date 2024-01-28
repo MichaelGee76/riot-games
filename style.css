@@ -1,0 +1,152 @@
+@font-face {
+    font-family: Farro;
+    src: url(./assets/fonts/Farro/Farro-Regular.ttf);
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url(./assets/fonts/Roboto/Roboto-Regular.ttf);
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+/* ? ###################### Clamp ##################### */
+
+h1 {
+    font-size: clamp(3rem, 4vw, 5rem);
+}
+h2 {
+    font-size: clamp(3rem, 4vw, 4.8rem);
+}
+h3 {
+    font-size: clamp(2.5rem, 3.3vw, 4rem);
+}
+h4 {
+    font-size: clamp(2.8rem, 3.2vw, 3.8rem);
+}
+h5 {
+    font-size: clamp(2.5rem, 3vw, 3.2rem);
+}
+h6 {
+    font-size: clamp(1.6rem, 2.5vw, 1.8rem);
+}
+p,
+label {
+    font-size: clamp(2rem, 2vw, 2rem);
+}
+a,
+li {
+    font-size: clamp(2rem, 2vw, 2rem);
+}
+
+/* ? ################## Wrapper #################### */
+
+/* ? ################### Header ###################### */
+
+header {
+    height: 100vh;
+    background-image: url(./assets/images/bg-riotGames.jpg);
+    background-size: cover;
+    background-position: fixed;
+}
+
+/* ! ###### Nav include Animation ############ */
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 4rem;
+    background-color: black;
+    position: absolute;
+    min-width: 100vw;
+    animation: slide-down 1s ease-out 0s 1;
+}
+
+@keyframes slide-down {
+    from {
+        margin-top: -10%;
+    }
+    to {
+        margin-top: 0%;
+    }
+}
+
+/* ! ############################################### */
+
+.links {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.links a {
+    color: white;
+    font-weight: 700;
+    margin-left: 3rem;
+}
+
+.links img {
+    width: 55%;
+}
+
+.button {
+    background: #ff4655;
+    border-radius: 1.875rem;
+    color: black;
+    font-weight: 700;
+    padding: 1rem 2rem;
+}
+
+section {
+    display: flex;
+}
+
+.leftContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 5%;
+    padding-left: 3vw;
+    min-width: 33%;
+    min-height: 100vh;
+}
+
+span {
+    color: white;
+    position: absolute;
+    top: 10px;
+    left: -30px;
+    font-size: clamp(2rem, 2.5vw, 3rem);
+    font-weight: 900;
+    padding-right: rem;
+}
+
+.leftContainer a {
+    font-size: clamp(5rem, 6vw, 9rem);
+    color: white;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.active span,
+.leftContainer .active {
+    color: #ff4655;
+}
