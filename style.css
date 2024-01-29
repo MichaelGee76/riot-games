@@ -170,6 +170,8 @@ span {
     text-underline-offset: 10px;
     -webkit-text-stroke-width: 0.3px;
     -webkit-text-stroke-color: #ffffff;
+    left: 25px;
+    filter: invert(0.75);
 }
 
 .active span,
@@ -201,6 +203,13 @@ span {
     to {
         transform: scale(1);
     }
+}
+
+/* flip image on hover! */
+
+.middleContainer img:hover {
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
 }
 
 /* !###################### End of Animation ########################## */
@@ -248,16 +257,16 @@ span {
     margin-bottom: 3rem;
 }
 
-.rightContainer h1,
-.rightContainer h2,
-.rightContainer p {
-    margin-bottom: 2rem;
-}
-
 .cube {
     width: 1.5rem;
     height: 1.5rem;
     background-color: #fff;
+}
+
+.rightContainer h2:hover,
+.rightContainer h1:hover,
+.rightContainer p:hover {
+    transform: scale(1.2);
 }
 
 /* ? ######################## Media Queries #################### */
